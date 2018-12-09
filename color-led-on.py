@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import RPi.GPIO as GPIO
-gpio_pin_number=20
+gpio_pin_number=18
 GPIO.setmode(GPIO.BCM) # BCM pin numbering
 GPIO.setwarnings(False)
 GPIO.setup(gpio_pin_number, GPIO.OUT)

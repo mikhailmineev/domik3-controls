@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import RPi.GPIO as GPIO
 
-pin_number=19
+pin_number=17
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)

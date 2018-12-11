@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-gpio_pin_number=16
+gpio_pin_number=18
 
 GPIO.setmode(GPIO.BCM) # BCM pin numbering
 GPIO.setwarnings(False)

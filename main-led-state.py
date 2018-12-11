@@ -1,26 +1,11 @@
 #!/usr/bin/env python
-import subprocess
-from subprocess import Popen, PIPE
+import RPi.GPIO as GPIO
 
 pin_number=19
-proc = Popen(
-    "echo %s > /sys/class/gpio/export" % pin_number,
-    shell=True,
-    stdout=PIPE, stderr=PIPE
-)
 
-proc.wait()
-proc = Popen(
-    "cat /sys/class/gpio/gpio%s/value" % pin_number,
-    shell=True,
-    stdout=PIPE, stderr=PIPE
-)
-proc.wait()
-res = proc.communicate()  # get tuple('stdout', 'stderr')
-count = res[0].replace("\n","")
-count = int(count)
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(pin_number, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+if not GPIO.input(pin_number):
+    print('1')
 
-if count == 0:
-        id=0
-else:
-        print('1').replace("\n","")

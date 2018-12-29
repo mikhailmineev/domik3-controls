@@ -6,6 +6,6 @@ read_pin_number=17
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(read_pin_number, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-if not GPIO.input(read_pin_number):
+if GPIO.input(read_pin_number):
     print('1')
 

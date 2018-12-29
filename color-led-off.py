@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 
 gpio_pin_number=16
-read_pin_number=17
+read_pin_number=19
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
